@@ -1,5 +1,5 @@
 <app-header></app-header>
-<h1>Image Gallery</h1>
+<h1>Gallery</h1>
 <hr>  
 <div class="jumbotron">
     <hr>
@@ -8,9 +8,9 @@
         <div class="col-lg-4 col-md-12">
             <div class="input-group mb-12">
               <div class="input-group-prepend">
-                  <label class="input-group-text" for="imageNm">Image Name</label>
+                  <label class="input-group-text" for="imageNm">Art Name</label>
               </div>
-              <input type="text" name="imageName" id="imageName" [(ngModel)]="imageNm" placeholder="Enter Image Name">
+              <input type="text" name="imageName" id="imageName" [(ngModel)]="imageNm" placeholder="Enter Creativity Name">
             </div>
         </div>
       </div>
@@ -37,20 +37,18 @@
       </div>
   
     <hr>
-    <h2 class="display-4 text-center">Your Images </h2>
+    <h2 class="display-4 text-center">Your Gallery  </h2>
     <hr>
     <div class="row">
       <div class="col-md-3 mb-3 sm-2 xs-1 d-flex align-items-stretch" *ngFor="let image of images | async">
           <div class="card">
-              <div class="view" (click)="maximizeImage(image)" data-toggle="modal" data-target="#product-dtl">
+             
                     <img class="img-fluid" data-src="{{image.imageURL}}" alt="Card image cap" style="cursor: pointer; height: 150px">
-              </div>
+            
               <div class="card-body">
                   <h4 class="card-title">{{image?.imageName}}</h4>
-                  <button type="button" class="btn btn-sm btn-info" (click)="maximizeImage(image)" data-toggle="modal" data-target="#product-dtl" style="float: left;">Maximize</button>
-         <i class="rem-icon fa fa-trash"  aria-hidden="true" (click)="onDeleteClick(image)" data-toggle="modal" data-target="#notification-delete-confirm" style="float:right;">
-                </i>
               </div>
+              <button routerLink="/register-product">Auction</button>
           </div>
       </div>
     </div>

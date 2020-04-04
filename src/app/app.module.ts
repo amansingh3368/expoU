@@ -26,6 +26,7 @@ import { NotificationServicesService } from './shared/services/notification-serv
 import { AngularFireStorageModule, AngularFireUploadTask } from '@angular/fire/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RegisterProductComponent } from './components/register-product/register-product.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CommonModule } from '@angular/common';
     NotificationsComponent,
     InboxComponent,
     ProfileComponent,
-    SettingsComponent
+    SettingsComponent,
+    RegisterProductComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

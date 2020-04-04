@@ -129,23 +129,7 @@ export class GalleryComponent implements OnInit {
     this.imagesCollection = this.afs.collection<Image>('images', ref => ref.orderBy('maintTs', 'desc'));
     this.images = this.imagesCollection.valueChanges();
   }
-  maximizeImage(image) {
-    this.modalImage = image;
-    this.noteSvc.setNotification(
-      image.imageName,
-      image.imagePath
-      );
-      $('.max-img-notification-btn').click();
-  }
-  onDeleteClick(image) {
-    this.modalImage = image;
-    this.noteSvc.setNotification(
-    'Confirmation',
-    'Are you sure you want to remove ' + image.imageName
-    + ' from the Account?'
-    );
-    $('.del-notification-btn').click();
-  }
+  
   deleteItem() {
     console.log('From notifications ' + this.modalImage.id);
     $('.cancel-del-modal').click();

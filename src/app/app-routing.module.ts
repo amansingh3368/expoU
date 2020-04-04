@@ -15,9 +15,10 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { ProfileComponent } from './components/profile/profile.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { RegisterProductComponent } from './components/register-product/register-product.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/register-user', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent, 
   // canActivate: [SecureInnerPagesGuard] 
 },
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'notifications', component:NotificationsComponent },
   { path: 'profile', component:ProfileComponent },
   { path: 'settings', component:SettingsComponent},
-  { path: 'gallery', component:GalleryComponent}
+  { path: 'gallery', component:GalleryComponent},
+  { path: 'register-product', component:RegisterProductComponent}
 ];
 
 
