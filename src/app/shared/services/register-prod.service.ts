@@ -7,9 +7,9 @@ export class RegisterProdService {
 
   constructor() { }
 
-    data=[];
+    data: any;
     addData(value){
-      this.data.push(value);
+      this.data=value;
     }
     getData(){
       return this.data;

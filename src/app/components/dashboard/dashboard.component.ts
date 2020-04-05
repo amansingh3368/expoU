@@ -8,11 +8,13 @@ import { RegisterProdService } from 'src/app/shared/services/register-prod.servi
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(public authService: AuthService, private regisProd: RegisterProdService) { }
+  data: any;
+  constructor(public authService: AuthService, public regisProd: RegisterProdService) { }
 
   ngOnInit() {
+    this.data=this.regisProd.getData();
+    console.log(this.data);
   }
-  data=this.regisProd.getData();
 
+  
 }

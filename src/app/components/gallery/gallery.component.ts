@@ -130,11 +130,5 @@ export class GalleryComponent implements OnInit {
     this.images = this.imagesCollection.valueChanges();
   }
   
-  deleteItem() {
-    console.log('From notifications ' + this.modalImage.id);
-    $('.cancel-del-modal').click();
-    this.imagesCollection.doc(this.modalImage.id).delete();
-    this.afStorage.ref(this.modalImage.imagePath).delete();
-
-  }
+  
 }
