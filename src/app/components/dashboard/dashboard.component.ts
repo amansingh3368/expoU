@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { RegisterProdService } from 'src/app/shared/services/register-prod.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +9,10 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, private regisProd: RegisterProdService) { }
 
   ngOnInit() {
   }
+  data=this.regisProd.getData();
 
 }

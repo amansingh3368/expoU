@@ -1,15 +1,15 @@
 <p routerLink="/gallery">Back to gallery</p>
 
-<form action="">
+<form action="" (ngSubmit)="addData(f)" #f="ngForm">
     <label for="creativityname">Creativity Name:</label>
-    <input type="text" id="cname" name="creativityname" required><br>
+    <input type="text" id="cname" name="creativityname" ngModel required><br>
     <label for="creativitydescription">Creativity Description:</label>
-    <input type="text" id="cdesc" name="creativitydescription" required><br>
+    <input type="text" id="cdesc" name="creativitydescription" ngModel required><br>
     <label for="minbid">Minimum bid amount(in Rs):</label>
-    <input type="text" id="mbid" name="minbid" required><br>
+    <input type="number" id="mbid" name="minbid" ngModel required><br>
     <label for="auctime">Auction Time:</label>
-    <input type="text" id="auctiontime" name="auctime" required><br>
+    <input type="text" id="auctiontime" name="auctime" ngModel required><br>
   
 
-    <button>Add</button>
+    <button class="btn btn-success" type="submit">Add</button>
 </form>
