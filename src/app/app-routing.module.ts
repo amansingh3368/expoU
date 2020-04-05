@@ -39,7 +39,8 @@ const routes: Routes = [
   { path: 'profile', component:ProfileComponent },
   { path: 'settings', component:SettingsComponent},
   { path: 'gallery', component:GalleryComponent},
-  { path: 'register-product', component:RegisterProductComponent}
+  { path: 'register-product', component:RegisterProductComponent},
+  { path: 'register-product/:url', component:RegisterProductComponent}
 ];
 
 

@@ -15,7 +15,7 @@ export class RegisterProdService {
       return this.data;
     }
     clearData(){
-      this.data=[];
+      this.data= undefined;
       return this.data;
     }
 }
