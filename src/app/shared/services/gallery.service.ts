@@ -8,10 +8,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class GalleryService {
   gallery : any[]=[];
   constructor(private firestore: AngularFirestore) { }
-   getGallery(){
+   getGallery(force :boolean){
     return new Promise<any[]>(async(resolve, reject)=>{
       try{
-        if(this.gallery.length>0){
+        if(!force || this.gallery.length>0){
           resolve(this.gallery);
           return ;
         }
