@@ -7,6 +7,8 @@ import { Observable, Timestamp } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 import { NotificationServicesService } from 'src/app/shared/services/notification-services.service';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
+import { async } from '@angular/core/testing';
+import { GalleryService } from 'src/app/shared/services/gallery.service';
 
 export interface Image { id: string; imagePath: string; imageURL: string; imageName: string; maintTs: number; }
 
@@ -16,7 +18,7 @@ export interface Image { id: string; imagePath: string; imageURL: string; imageN
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-
+  gallery : any[]=[];
   title = 'app';
   myForm: FormGroup;
   imageNm: string;
@@ -32,8 +34,13 @@ export class GalleryComponent implements OnInit {
   constructor(public fb: FormBuilder,
               public noteSvc: NotificationServicesService,
               public afStorage: AngularFireStorage,
-              public afs: AngularFirestore
-  ) {  }
+              public afs: AngularFirestore,
+              public galleryService: GalleryService
+  ) { 
+    setTimeout(async () => {
+      this.gallery=await this.galleryService.getGallery(false); 
+    }, 0);
+   }
 
   ngOnInit() {
     this.createForm();
@@ -129,6 +136,8 @@ export class GalleryComponent implements OnInit {
     this.imagesCollection = this.afs.collection<Image>('images', ref => ref.orderBy('maintTs', 'desc'));
     this.images = this.imagesCollection.valueChanges();
   }
+
+
   
   
 }

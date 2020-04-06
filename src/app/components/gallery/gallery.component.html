@@ -39,8 +39,23 @@
     <hr>
     <h2 class="display-4 text-center">Your Gallery  </h2>
     <hr>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-3 mb-3 sm-2 xs-1 d-flex align-items-stretch" *ngFor="let image of images | async">
+          <div class="card">
+             
+                    <img class="img-fluid" data-src="{{image.imageURL}}" alt="Card image cap" style="cursor: pointer; height: 150px">
+            
+              <div class="card-body">
+                  <h4 class="card-title">{{image?.imageName}}</h4>
+              </div>
+              <button routerLink="/register-product" class="btn btn-success" >Auction</button>
+          </div>
+      </div>
+    </div> -->
+
+
+    <div class="row">
+      <div class="col-md-3 mb-3 sm-2 xs-1 d-flex align-items-stretch" *ngFor="let image of gallery">
           <div class="card">
              
                     <img class="img-fluid" data-src="{{image.imageURL}}" alt="Card image cap" style="cursor: pointer; height: 150px">
@@ -53,4 +68,5 @@
       </div>
     </div>
 
+    
     
