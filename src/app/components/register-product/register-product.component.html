@@ -1,15 +1,15 @@
 <p routerLink="/gallery">Back to gallery</p>
 
-<form action="" (ngSubmit)="addData(f)" #f="ngForm">
-    <label for="creativityname">Creativity Name:</label>
-    <input type="text" id="cname" name="creativityname" ngModel required><br>
-    <label for="creativitydescription">Creativity Description:</label>
-    <input type="text" id="cdesc" name="creativitydescription" ngModel required><br>
-    <label for="minbid">Minimum bid amount(in Rs):</label>
-    <input type="number" id="mbid" name="minbid" ngModel required><br>
-    <label for="auctime">Auction Time:</label>
-    <input type="time" id="auctiontime" name="auctime" ngModel required><br>
+<form [formGroup]="this.registerProd.form" (ngSubmit)="onSubmit()">
+    
+    <input type="text" id="cname" formControlName="creativityname" placeholder="creativity Name"><br>
+
+    <input type="text" id="cdesc" formControlName="creativitydescription" placeholder="creativity Description"><br>
+
+    <input type="number" id="mbid" formControlName="minbid" placeholder="Minimum Bidding"><br>
+
+    <input type="time" id="auctiontime" formControlName="auctime" placeholder="Auction Time"><br>
   
 
-    <button class="btn btn-success" type="submit">Add</button>
+    <button class="btn btn-success" (click)="onSubmit()">Add</button>
 </form>

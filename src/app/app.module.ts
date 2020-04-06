@@ -27,6 +27,7 @@ import { AngularFireStorageModule, AngularFireUploadTask } from '@angular/fire/s
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
+import { RegisterProdService } from './shared/services/register-prod.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { RegisterProductComponent } from './components/register-product/register
     ReactiveFormsModule,
     CommonModule
   ],
-  providers: [AuthService, NotificationServicesService],
+  providers: [AuthService, NotificationServicesService, RegisterProdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

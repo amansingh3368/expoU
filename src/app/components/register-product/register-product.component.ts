@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms'; 
 import { RegisterProdService } from 'src/app/shared/services/register-prod.service';
-import { ActivatedRoute } from '@angular/router';
-import { analytics } from 'firebase';
 
 @Component({
   selector: 'app-register-product',
@@ -11,20 +9,17 @@ import { analytics } from 'firebase';
 })
 export class RegisterProductComponent implements OnInit  {
 
-  constructor(public registerProd: RegisterProdService, 
-    public activatedRoute: ActivatedRoute
-    ) {
-      this.activatedRoute.paramMap.subscribe((params: any)=>{
-        console.log(JSON.stringify(params));
-      })
-     }
+  constructor(private registerProd: RegisterProdService ) { }
 
   ngOnInit() {
   }
-  addData(form: NgForm){
-    const value=form.value;
-    this.registerProd.addData(value);
-    console.log(this.registerProd.getData());
-  }
+  onSubmit(){
   
+    
+    let data=this.registerProd.form.value;
+
+    this.registerProd.createAuctionData(data).then(res=>{
+      console.log("submitted");
+    });
+  }
 }

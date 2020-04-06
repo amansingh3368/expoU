@@ -12,9 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor(public authService: AuthService, public regisProd: RegisterProdService) { }
 
   ngOnInit() {
-    this.data=this.regisProd.getData();
-    
-    console.log(JSON.stringify(this.data));
+   
   }
 
   

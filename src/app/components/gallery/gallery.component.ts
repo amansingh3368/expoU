@@ -7,7 +7,6 @@ import { Observable, Timestamp } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 import { NotificationServicesService } from 'src/app/shared/services/notification-services.service';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
 
 export interface Image { id: string; imagePath: string; imageURL: string; imageName: string; maintTs: number; }
 
@@ -33,8 +32,7 @@ export class GalleryComponent implements OnInit {
   constructor(public fb: FormBuilder,
               public noteSvc: NotificationServicesService,
               public afStorage: AngularFireStorage,
-              public afs: AngularFirestore,
-              public router: Router
+              public afs: AngularFirestore
   ) {  }
 
   ngOnInit() {
@@ -131,10 +129,6 @@ export class GalleryComponent implements OnInit {
     this.imagesCollection = this.afs.collection<Image>('images', ref => ref.orderBy('maintTs', 'desc'));
     this.images = this.imagesCollection.valueChanges();
   }
-
-  registerProduct(imageurl: string){
-    console.log(imageurl);
-    this.router.navigate([`./register-product/:${imageurl}`]);
-  }
+  
   
 }
