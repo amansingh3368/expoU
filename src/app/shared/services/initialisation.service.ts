@@ -8,6 +8,5 @@ export class InitialisationService {
   constructor() { }
   initialiseData(auctionData){
     this.auctionData=auctionData;
-    return this.auctionData;
   }
 }
