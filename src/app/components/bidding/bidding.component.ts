@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { InitialisationService } from 'src/app/shared/services/initialisation.service';
 
 @Component({
   selector: 'app-bidding',
@@ -8,11 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BiddingComponent implements OnInit {
   auctionData;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, public initial: InitialisationService) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params=>{
-      this.auctionData=params.get('auctionData');
+    this.auctionData=this.initial.initialiseData;
     })
   }
   
