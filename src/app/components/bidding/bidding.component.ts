@@ -12,8 +12,8 @@ export class BiddingComponent implements OnInit {
   constructor(private route: ActivatedRoute, public initial: InitialisationService) { }
 
   ngOnInit() {
-    this.auctionData=this.initial.initialiseData;
-    })
+    this.auctionData=this.initial.auctionData;
+    
   }
   
  
