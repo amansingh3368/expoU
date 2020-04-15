@@ -18,7 +18,7 @@ export interface Image { id: string; imagePath: string; imageURL: string; imageN
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-  gallery : any[]=[];
+  gallery : any[];
   title = 'app';
   myForm: FormGroup;
   imageNm: string;
@@ -38,7 +38,9 @@ export class GalleryComponent implements OnInit {
               public galleryService: GalleryService
   ) { 
     setTimeout(async () => {
+      // console.log("function Running");
       this.gallery=await this.galleryService.getGallery(false); 
+      // console.log(JSON.stringify(this.gallery));
     }, 0);
    }
 
@@ -127,17 +129,10 @@ export class GalleryComponent implements OnInit {
           });
 
         })
-     )
-    .subscribe();
-
+     ).subscribe();
   }
-
   loadImages() {
     this.imagesCollection = this.afs.collection<Image>('images', ref => ref.orderBy('maintTs', 'desc'));
     this.images = this.imagesCollection.valueChanges();
   }
-
-
-  
-  
 }

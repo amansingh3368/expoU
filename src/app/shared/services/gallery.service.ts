@@ -11,7 +11,7 @@ export class GalleryService {
    getGallery(force :boolean){
     return new Promise<any[]>(async(resolve, reject)=>{
       try{
-        if(!force || this.gallery.length>0){
+        if(!force && this.gallery.length>0){
           resolve(this.gallery);
           return ;
         }

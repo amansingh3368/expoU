@@ -63,7 +63,7 @@
               <div class="card-body">
                   <h4 class="card-title">{{image?.imageName}}</h4>
               </div>
-              <button routerLink="/register-product" class="btn btn-success" >Auction</button>
+              <button [routerLink]="['/register-product',image.imageURL]" class="btn btn-success" >Auction</button>
           </div>
       </div>
     </div>

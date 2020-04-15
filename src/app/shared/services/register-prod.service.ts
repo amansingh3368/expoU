@@ -1,22 +1,29 @@
 import { Injectable } from '@angular/core';
 import {FormControl, FormGroup } from '@angular/forms';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { async } from '@angular/core/testing';
-import * as firebase from 'firebase';
 import 'firebase/firestore';
 import { generateRandomString } from 'src/app/app.utils';
+import { Observable } from 'rxjs';
+import { auctionData } from './auctionData';
+
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterProdService {
+  auctionDataCollection: AngularFirestoreCollection<auctionData>;
 
-  constructor(private firestore: AngularFirestore) { }
+
+  constructor(private firestore: AngularFirestore) { 
+    
+  }
 
     form= new FormGroup({
       creativityname: new FormControl(''),
       creativitydescription: new FormControl(''),
       minbid: new FormControl(''),
-      auctime: new FormControl('')
+      auctime: new FormControl(''),
+      imageData: new FormControl('')
     })
 
     createAuctionData(data){
@@ -30,4 +37,10 @@ export class RegisterProdService {
         // this.firestore.collection("auctionData").add(data).then(res=>{}, err=>reject(err));
       })
     }
+
+      getAuctionData(){
+        return this.firestore.collection('AuctionData').snapshotChanges();
+      }
+    
+
 }

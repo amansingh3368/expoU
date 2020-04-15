@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
+import { BiddingComponent } from './components/bidding/bidding.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/register-user', pathMatch: 'full' },
@@ -40,7 +41,9 @@ const routes: Routes = [
   { path: 'settings', component:SettingsComponent},
   { path: 'gallery', component:GalleryComponent},
   { path: 'register-product', component:RegisterProductComponent},
-  { path: 'register-product/:url', component:RegisterProductComponent}
+  { path: 'register-product/:url', component:RegisterProductComponent},
+  { path: 'bidding', component:BiddingComponent},
+  { path: 'bidding/:auctionData', component:BiddingComponent}
 ];
 
 

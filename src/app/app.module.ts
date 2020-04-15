@@ -28,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
 import { RegisterProdService } from './shared/services/register-prod.service';
+import { BiddingComponent } from './components/bidding/bidding.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RegisterProdService } from './shared/services/register-prod.service';
     InboxComponent,
     ProfileComponent,
     SettingsComponent,
-    RegisterProductComponent
+    RegisterProductComponent,
+    BiddingComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
