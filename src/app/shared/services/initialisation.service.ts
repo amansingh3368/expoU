@@ -9,4 +9,7 @@ export class InitialisationService {
   initialiseData(auctionData){
     this.auctionData=auctionData;
   }
+
+
+ 
 }

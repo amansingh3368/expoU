@@ -41,6 +41,10 @@ export class RegisterProdService {
       getAuctionData(){
         return this.firestore.collection('AuctionData').snapshotChanges();
       }
+
+      updateBid(aucData,data){
+        this.firestore.collection('AuctionData').doc(aucData.payload.doc.id).set({minbid:data},{merge:true});
+      }
     
 
 }

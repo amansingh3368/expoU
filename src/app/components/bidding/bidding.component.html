@@ -1,4 +1,10 @@
 <h1>Bidding</h1>
 <h2>{{auctionData.payload.doc.data().creativityname}}</h2>
-
-<h3 routerLink="/dashboard">Back to Dashboard</h3>
+<h2>minimum bidding: {{auctionData.payload.doc.data().minbid}}</h2>
+<img mat-card-image src="{{auctionData.payload.doc.data().imageData}}" style="cursor: pointer; height: 150px;width: 200px;">
+<p>
+    creativity Description:  {{auctionData.payload.doc.data().creativitydescription}}
+</p>
+<h3>Enter amount:</h3><input type="number" #biddingValue>
+<button class="btn btn-danger" (click)="updateBid(biddingValue.value)">Bid </button>
+<h6 routerLink="/dashboard">Back to Dashboard</h6>
