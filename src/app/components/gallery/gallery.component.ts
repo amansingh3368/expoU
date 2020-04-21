@@ -9,8 +9,9 @@ import { NotificationServicesService } from 'src/app/shared/services/notificatio
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { async } from '@angular/core/testing';
 import { GalleryService } from 'src/app/shared/services/gallery.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
-export interface Image { id: string; imagePath: string; imageURL: string; imageName: string; maintTs: number; }
+export interface Image { id: string; imagePath: string; imageURL: string; imageName: string; maintTs: number; userId: any}
 
 @Component({
   selector: 'app-gallery',
@@ -35,7 +36,8 @@ export class GalleryComponent implements OnInit {
               public noteSvc: NotificationServicesService,
               public afStorage: AngularFireStorage,
               public afs: AngularFirestore,
-              public galleryService: GalleryService
+              public galleryService: GalleryService,
+              public authData: AuthService
   ) { 
     setTimeout(async () => {
       // console.log("function Running");
@@ -121,7 +123,9 @@ export class GalleryComponent implements OnInit {
             const imageName = this.imageNm;
             // To store timestamp of the image before being inserted in firestore
             const maintTs = Date.now();
-            const image: Image = { id, imagePath, imageURL, imageName, maintTs };
+
+            const userId=this.authData.userData.uid;
+            const image: Image = { id, imagePath, imageURL, imageName, maintTs, userId };
             // image object inserted in image collection (AngularFirestoreCollection)
             this.imagesCollection.doc(id).set(image);
             // setting the image name back to blank

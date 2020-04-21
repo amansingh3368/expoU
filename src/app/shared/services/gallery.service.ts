@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { promise } from 'protractor';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GalleryService {
   gallery : any[]=[];
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore, public authData: AuthService) { }
    getGallery(force :boolean){
     return new Promise<any[]>(async(resolve, reject)=>{
       try{
