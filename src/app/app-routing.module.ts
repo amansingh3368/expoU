@@ -17,6 +17,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
 import { BiddingComponent } from './components/bidding/bidding.component';
+import { ChatroomComponent } from './components/chatroom/chatroom.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/register-user', pathMatch: 'full' },
@@ -35,7 +36,7 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent,
   //  canActivate: [SecureInnerPagesGuard] 
    },
-  { path: 'inbox', component:InboxComponent },
+  { path: 'chatroom', component:ChatroomComponent },
   { path: 'notifications', component:NotificationsComponent },
   { path: 'profile', component:ProfileComponent },
   { path: 'settings', component:SettingsComponent},

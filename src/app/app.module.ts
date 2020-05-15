@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule} from '@angular/fire/firestore';
@@ -29,6 +30,16 @@ import { CommonModule } from '@angular/common';
 import { RegisterProductComponent } from './components/register-product/register-product.component';
 import { RegisterProdService } from './shared/services/register-prod.service';
 import { BiddingComponent } from './components/bidding/bidding.component';
+import { ChatFormComponent } from './components/chat-form/chat-form.component';
+import { ChatroomComponent } from './components/chatroom/chatroom.component';
+import { FeedComponent } from './components/feed/feed.component';
+import { MessageComponent } from './components/message/message.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserItemComponent } from './components/user-item/user-item.component';
+import { ChatService } from './shared/services/chat.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -45,12 +56,19 @@ import { BiddingComponent } from './components/bidding/bidding.component';
     ProfileComponent,
     SettingsComponent,
     RegisterProductComponent,
-    BiddingComponent
+    BiddingComponent,
+    ChatFormComponent,
+    ChatroomComponent,
+    FeedComponent,
+    MessageComponent,
+    UserListComponent,
+    UserItemComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -60,7 +78,7 @@ import { BiddingComponent } from './components/bidding/bidding.component';
     ReactiveFormsModule,
     CommonModule
   ],
-  providers: [AuthService, NotificationServicesService, RegisterProdService],
+  providers: [AuthService, NotificationServicesService, RegisterProdService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

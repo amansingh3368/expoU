@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RegisterProductComponent implements OnInit  {
 
-  constructor(private registerProd: RegisterProdService, private route:ActivatedRoute ) { }
+  constructor(public registerProd: RegisterProdService, public route:ActivatedRoute ) { }
   imgURL: any;
   ngOnInit() {
     this.route.paramMap.subscribe(params=>{

@@ -24,12 +24,12 @@ export class ProfileComponent implements OnInit {
   //   console.log(this.authService.userData.photoURL);
   // }
 
-  // updateDp(){
-  //   // console.log("hello");
-  //   $('#imageFile').click();
-  // }
+  updateDp(){
+    // console.log("hello");
+    // $('#imageFile').click();
+  }
   
-  // onFileChange(event){
+  onFileChange(event){
   //   const reader = new FileReader();
   //   if (event.target.files &&
   //     event.target.files.length > 0) {
@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
   //     };
   //     this.startUpload(event.target.files);
   // }
-  // }
+  }
   // startUpload(event: FileList) {
   //   // File object
   //   const file = event.item(0);
