@@ -9,17 +9,24 @@ import { AngularFireObject, AngularFireList} from 'angularfire2/database';
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.css']
 })
-export class FeedComponent implements OnInit, OnChanges {
-  feed: AngularFireList<ChatMessage[]>;
+export class FeedComponent implements OnInit {
+  feed: Array<ChatMessage[]>;
 
   constructor(private chat: ChatService) { }
 
   ngOnInit() {
-    this.feed = this.chat.getMessages();
+    // this.feed = this.chat.getMessages();
+    // this.chat.getMessages().valueChanges().subscribe((snapshot)=>{console.log(snapshot)});
+    // this.feed=snapshot;
+    // this.chat.getMessages().valueChanges().subscribe((snapshot) => {
+    //   console.log(JSON.stringify(snapshot));
+    this.chat.getMessages().valueChanges().subscribe((snapshot) => {
+      console.log(JSON.stringify(snapshot));;
+      // this.feed = snapshot;
+      this.feed=snapshot;
+  });
+  }
   }
 
-  ngOnChanges() {
-    this.feed = this.chat.getMessages();
-  }
+  
 
-}
