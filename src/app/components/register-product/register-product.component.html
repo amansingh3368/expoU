@@ -1,7 +1,5 @@
-<p routerLink="/gallery">Back to gallery</p>
-
+<div class="whole">
 <form [formGroup]="this.registerProd.form">
-    
     <input type="text" id="cname" formControlName="creativityname" placeholder="creativity Name"><br>
 
     <input type="text" id="cdesc" formControlName="creativitydescription" placeholder="creativity Description"><br>
@@ -10,7 +8,10 @@
 
     <input type="time" id="auctiontime" formControlName="auctime" placeholder="Auction Time"><br>
 
-    <img class="img-fluid" data-src="{{imgURL}}" alt="img not loaded yet" style="cursor:pointer;height: 150px" ><br>
+    <img class="img-fluid" data-src="{{imgURL}}" alt="img not loaded yet" style="cursor:pointer;height:500px;width:500px;" ><br>
 
-    <button class="btn btn-success" (click)="onSubmit()">Add</button>
+    <button class="special" (click)="onSubmit()">Add</button>
 </form>
+<button routerLink="/gallery" class="button">Back to Gallery</button>
+
+</div>

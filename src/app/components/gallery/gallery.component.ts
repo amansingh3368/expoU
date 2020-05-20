@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, OnChanges } from '@angular/core';
 import {FormGroup, FormsModule, ReactiveFormsModule, FormBuilder} from '@angular/forms';
 import * as $ from 'jquery';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
@@ -18,7 +18,7 @@ export interface Image { id: string; imagePath: string; imageURL: string; imageN
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent implements OnInit{
   gallery : any[];
   title = 'app';
   myForm: FormGroup;
@@ -33,23 +33,24 @@ export class GalleryComponent implements OnInit {
   downloadURL: Observable<string>;
 
   constructor(public fb: FormBuilder,
-              public noteSvc: NotificationServicesService,
               public afStorage: AngularFireStorage,
               public afs: AngularFirestore,
               public galleryService: GalleryService,
               public authData: AuthService
   ) { 
-    setTimeout(async () => {
-      // console.log("function Running");
-      this.gallery=await this.galleryService.getGallery(false); 
-      // console.log(JSON.stringify(this.gallery));
-    }, 0);
+    // setTimeout(async () => {
+    //   // console.log("function Running");
+    //   this.gallery=await this.galleryService.getGallery(false); 
+    //   // console.log(JSON.stringify(this.gallery));
+    // }, 0);
    }
+  
 
   ngOnInit() {
     this.createForm();
     this.loadImages();
   }
+ 
   createForm() {
     this.myForm = this.fb.group({
       imageName: '',
@@ -59,11 +60,6 @@ export class GalleryComponent implements OnInit {
 
   onUploadBtnClick() {
     if (this.imageNm === undefined) {
-      this.noteSvc.setNotification(
-        'Missing Information',
-        'Please give a name to the image before you click on upload!'
-        );
-        $('.notification-btn').click();
     } else {
       $('#imageFile').click();
     }

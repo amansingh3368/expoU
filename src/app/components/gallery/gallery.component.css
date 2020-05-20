@@ -30,3 +30,58 @@ progress {
 progress::-webkit-progress-value {
   transition: width 0.1s ease;
 }
+
+.zoom{
+  cursor: pointer; height: 250px;width: 250px;
+}
+.zoom:hover{
+  transform: scale(1.3); 
+}
+
+.cardList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin:10px 10px;
+}
+/* Column Gap */
+.cardList > * {
+  box-sizing: border-box;
+}
+.cardList > *:not(:last-child) {
+  margin-right: 32px;
+  margin-top: 32px;
+}
+/* Item sizing */
+.cardListItem {
+  flex: 0 1 calc(33.3% - 32px);
+}
+/* medium size viewport */
+@media screen and (max-width: 959px) {
+  /* Column Gap */
+  .cardList > *:not(:last-child) {
+    margin-right: 32px;
+    margin-top:32px;
+  }
+  /* Item sizing */
+  .cardListItem {
+    flex: 0 1 calc(50% - 32px);
+  }
+}
+/* small size viewport */
+@media screen and (max-width: 599px) {
+  .cardList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .cardList > *:not(:last-child) {
+    margin-right: unset;
+    margin-bottom: 32px;
+    margin-top:32px;
+  }
+}
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}

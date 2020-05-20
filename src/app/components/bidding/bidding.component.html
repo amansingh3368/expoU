@@ -1,10 +1,12 @@
-<h1>Bidding</h1>
-<h2>{{auctionData.payload.doc.data().creativityname}}</h2>
-<h2>minimum bidding: {{auctionData.payload.doc.data().minbid}}</h2>
-<img mat-card-image src="{{auctionData.payload.doc.data().imageData}}" style="cursor: pointer; height: 150px;width: 200px;">
-<p>
-    creativity Description:  {{auctionData.payload.doc.data().creativitydescription}}
-</p>
-<h3>Enter amount:</h3><input type="number" #biddingValue>
-<button class="btn btn-danger" (click)="updateBid(biddingValue.value)">Bid </button>
-<h6 routerLink="/dashboard">Back to Dashboard</h6>
+<div class="w3-container w3-black w3-center w3-allerta">
+    <p class="w3-xxxlarge">BiDDing</p>
+    <p class="w3-xlarge">{{auctionData.payload.doc.data().creativityname}}</p>
+    <p class="w3-xlarge">minimum bidding: {{auctionData.payload.doc.data().minbid}}</p>
+    <p class="w3-xlarge">creativity Description:  {{auctionData.payload.doc.data().creativitydescription}}</p>
+    <p class="w3-xxxlarge">Enter amount:<input type="number" #biddingValue>
+        <button class="btn btn-danger" (click)="updateBid(biddingValue.value)" style="height:80px;width:100px">Bid </button></p>
+        <img mat-card-image src="{{auctionData.payload.doc.data().imageData}}" id="myimage" style="cursor: pointer; height: 650px;width: 650px;">
+
+        <button routerLink="/dashboard" class="button">Back to Home</button>
+  </div>
+
