@@ -4,7 +4,7 @@
 </div> 
               <input type="text" name="imageName" id="imageName" [(ngModel)]="imageNm" placeholder="Enter Creativity Name">
               <!-- <img class="img-thumbnail" name="preview" id="preview" src="assets/no-img.jpg" (click) = "onUploadBtnClick()"> -->
-          <input type="button" (click)="onUploadBtnClick()" class="btn btn-sm btn-primary" id="uploadProductImg" style="float: left" value="Upload" accept="image/*">
+          <input type="button" (click)="onUploadBtnClick()" class="button" id="uploadProductImg" style="float: left" value="Upload" accept="image/*">
             <input type="file" id="imageFile" name="imageAvatar" (change)="onFileChange($event)">
           <br>
       <div *ngIf="uploadProgress | async as pct">
