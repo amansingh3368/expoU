@@ -50,7 +50,7 @@ import {
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
   ]
 })
 export class MaterialModule {}

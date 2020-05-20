@@ -21,7 +21,7 @@ export class FeedComponent implements OnInit {
     // this.chat.getMessages().valueChanges().subscribe((snapshot) => {
     //   console.log(JSON.stringify(snapshot));
     this.chat.getMessages().valueChanges().subscribe((snapshot) => {
-      console.log(JSON.stringify(snapshot));;
+      // console.log(JSON.stringify(snapshot));;
       // this.feed = snapshot;
       this.feed=snapshot;
   });

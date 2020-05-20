@@ -1,20 +1,15 @@
 <app-header></app-header>
-<h1>DashBoard</h1>
-
-<div *ngFor="let auctionData of auctionDatas">
-<mat-card class="example-card">
+<h1>BUY</h1>
+<div class="cardList">
+<div *ngFor="let auctionData of auctionDatas" >
+<mat-card class="cardListItem">
   <mat-card-header>
-    <mat-card-title>{{auctionData.payload.doc.data().creativityname}}</mat-card-title>
-    <!-- <mat-card-subtitle>minimum bidding: {{auctionData.payload.doc.data().minbid}}</mat-card-subtitle> -->
+    <mat-card-title class="heading">{{auctionData.payload.doc.data().creativityname}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="{{auctionData.payload.doc.data().imageData}}" style="cursor: pointer; height: 150px;width: 200px;">
-  <!-- <mat-card-content>
-    <p>
-        creativity Description:  {{auctionData.payload.doc.data().creativitydescription}}
-    </p>
-  </mat-card-content> -->
-  <mat-card-actions>
-    <button mat-button routerLink="/bidding" (click)="initialiseData(auctionData)">BID</button>
-  </mat-card-actions>
+  <img mat-card-image class="zoom" src="{{auctionData.payload.doc.data().imageData}}" 
+    routerLink="/bidding" (click)="initialiseData(auctionData)">
+ 
+  
 </mat-card>
+</div>
 </div>

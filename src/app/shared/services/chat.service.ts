@@ -56,7 +56,7 @@ export class ChatService {
   getMessages(): AngularFireList<ChatMessage[]> {
     // query to create our message feed binding
     return this.db.list('/messages',ref=> {
-      let q = ref.limitToLast(25).orderByKey();
+      let q = ref.limitToLast(10).orderByKey();
       return q;
     });
   }

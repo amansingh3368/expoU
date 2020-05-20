@@ -27,12 +27,12 @@
     padding:20px 0px 0px 24px;
 } */
 
-.chatFormWrapper {
+/* .chatFormWrapper {
     display: flex;
     height: 50px;
     background-color: #eee;
     z-index: 3;
-}
+} */
 
 #scroll-style::-webkit-scrollbar-track
 {
@@ -43,3 +43,8 @@
 app-user-list {
     width: 100%;
 } */
+.bodyy{
+    margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
